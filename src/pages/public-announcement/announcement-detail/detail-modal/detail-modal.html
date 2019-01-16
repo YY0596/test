@@ -1,0 +1,169 @@
+<ion-header >
+        <ion-navbar color="primary">
+        <ion-title>公示详情</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card class="cardCss">
+        <ion-card-header>
+            <h2>项目基本概况</h2>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- Add card content here! -->
+            <ion-list>
+                <ion-row [hidden]="!item?.GGSJ">
+                    <ion-col width-25>
+                        <h5>公告时间</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.GGSJ}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.GZDW">
+                    <ion-col width-25>
+                        <h5>工作单位</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.GZDW}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.HJSZCQMC">
+                    <ion-col width-25>
+                        <h5>户籍地所属街道</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.HJSZCQMC}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.HJSZJDMC">
+                    <ion-col width-25>
+                        <h5>户籍地所属地址</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.HJSZJDMC}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.JTRS">
+                    <ion-col width-25>
+                        <h5>保障人口</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.JTRS}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.JTZSR">
+                    <ion-col width-25>
+                        <h5>家庭收入(元)</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.JTZSR}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.JTZZC">
+                    <ion-col width-25>
+                        <h5>JTZZC</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.JTZZC}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.JZDZ">
+                    <ion-col width-25>
+                        <h5>居住地址</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.JZDZ}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.NSQQY">
+                    <ion-col width-25>
+                        <h5>NSQQY</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.NSQQY}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.PZFS">
+                    <ion-col width-25>
+                        <h5>保障方式</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.PZFS}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.R">
+                    <ion-col width-25>
+                        <h5>序号</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.R}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.RJCZFJZMJNEW">
+                    <ion-col width-25>
+                        <h5>RJCZFJZMJNEW</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.RJCZFJZMJNEW}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.RJZYCQJZMJNEW">
+                    <ion-col width-25>
+                        <h5>人均住房面积(㎡)</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.RJZYCQJZMJNEW}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.SFZH">
+                    <ion-col width-25>
+                        <h5>身份证号</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.SFZH}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.SQBBH">
+                    <ion-col width-25>
+                        <h5>申请编号</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.SQBBH}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.SQRXM">
+                    <ion-col width-25>
+                        <h5>申请人姓名：</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.SQRXM}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.SQSJ">
+                    <ion-col width-25>
+                        <h5>申请时间</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.SQSJ}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.XJZFFCXZ">
+                    <ion-col width-25>
+                        <h5>XJZFFCXZ</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.XJZFFCXZ}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row [hidden]="!item?.ZLBTJE">
+                    <ion-col width-25>
+                        <h5>租赁补贴金额</h5>
+                    </ion-col>
+                    <ion-col width-75>
+                        <p>{{item?.ZLBTJE}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

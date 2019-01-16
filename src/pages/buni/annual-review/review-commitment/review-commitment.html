@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>住房保障资格年审</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="center subject">填报承诺书</div>
+  <pre [innerHtml]="commitmentInfo" style="white-space: pre-wrap;
+  word-wrap: break-word;" class="note-info"></pre>
+
+  <ion-item no-lines>
+    <ion-label>我已阅读以上承诺书并同意</ion-label>
+    <ion-checkbox [(ngModel)]="hasRead"></ion-checkbox>
+  </ion-item>
+
+  <div class="center">
+    <button ion-button navPop>上一步</button>
+    <button ion-button (click)="nextPage()">下一步</button>
+  </div>
+</ion-content>

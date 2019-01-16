@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ProjectInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <!-- <ul class="header-wrap clear-on-parent toolbar">
+        <li class="item cart-and-msg-wrap row clear-on-parent">
+            <div><i class="iconfont icon-fanhui1" (click)="gotoLastPage()"></i></div>
+        </li>
+        <li class="item search-wrap">
+            <div class="inner-wrap absolute-header-middle" (click)="gotoProjectSelectModalPage()">
+                <ion-input class="search-box" type="text" [readonly]="true" [disabled]="true" [(ngModel)]="myInput" placeholder="输入项目名称"></ion-input>
+            </div>
+        </li>
+    </ul> -->
+    <ion-navbar color="primary">
+        <ion-title>房源信息</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="gotoProjectSelectModalPage()">
+                <ion-icon class="iconfont icon icon-ios icon-icon-gengduomore10 mtblue" item-right></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-fab left bottom>
+        <button ion-fab id="btLocation"><ion-icon name="ios-locate"  ></ion-icon></button>
+    </ion-fab> -->
+    <div id="container" style="height: 100%;">
+    </div>
+    <div class='center' style="position: absolute;
+    width: 10%;
+    bottom: 20px;">
+        <ion-list>
+            <ion-row>
+                <ion-col width-2>
+                    <div id='btLocation' style="padding-left: 10px;">
+
+                        <button ion-fab id="btLocation" style="background-color: white;width: 36px;
+      height: 36px;">
+                            <ion-icon class="iconfont icon icon-ios icon-pointlocation" style="color:#0066b3;font-size:1.5em"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,28 @@
+page-policy-information {
+    .text-infoAdress .list-blockAdress .textareaCss {
+        border: 0px;
+        background-color: #FFFFFF;
+        width: 100%;
+    }
+    .list-blockCompanyName .textareaCss {
+        border: 0px;
+        background-color: #FFFFFF
+    }
+    .list-blockAdress {
+        padding-top: 10px;
+        float: left;
+        text-align: left; // white-space: pre-wrap;
+        width: 64%;
+    }
+    .desc {
+        overflow: auto;
+        word-break: break-all;
+        white-space: initial;
+        height: 5rem;
+        float: left;
+        text-align: right;
+        width: 35%;
+        padding-top: 15px;
+        font-size: 1.5rem;
+    }
+}

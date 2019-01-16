@@ -1,0 +1,71 @@
+<ion-header mode="ios">
+    <ion-navbar color="primary">
+    <ion-title>上传图片</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="padding-top:150px;" padding>
+  <ion-item icon-start no-lines>
+    上传资料
+  </ion-item>
+  <div>
+    <div class="upload-modules">
+      <div (click)="takePhoto(0)">
+        <img [src]="imageData[0]">
+      </div>
+      <div (click)="takePhoto(1)">
+        <img [src]="imageData[1]">
+      </div>
+    </div>
+    <div class="upload-modules">
+      <div (click)="takePhoto(2)">
+        <img [src]="imageData[2]">
+      </div>
+      <div (click)="takePhoto(3)">
+        <img [src]="imageData[3]">
+      </div>
+    </div>
+    <div class="upload-modules">
+      <div (click)="takePhoto(4)">
+        <img [src]="imageData[4]">
+      </div>
+      <div (click)="takePhoto(5)">
+        <img [src]="imageData[5]">
+      </div>
+    </div>
+  </div>
+
+  <ion-list mode="md">
+    <ion-item icon-start no-lines>
+      选择上传其他资料
+      <span item-end icon-only solid (click)="isHiddenOtherImg()">
+        <ion-icon item-right [name]="hiddenOtherImg?'ios-add-circle-outline':'ios-remove-circle-outline'" style="font-size:18px;"></ion-icon>
+      </span>
+    </ion-item>
+  </ion-list>
+  <!-- ios-remove-circle-outline -->
+  <div [hidden]="hiddenOtherImg">
+    <div class="upload-modules">
+      <div (click)="takePhoto(6)">
+        <img [src]="imageData[6]">
+      </div>
+      <div (click)="takePhoto(7)">
+        <img [src]="imageData[7]">
+      </div>
+    </div>
+    <div class="upload-modules">
+      <div (click)="takePhoto(8)">
+        <img [src]="imageData[8]">
+      </div>
+      <div (click)="takePhoto(9)">
+        <img [src]="imageData[9]">
+      </div>
+    </div>
+  </div>
+
+  <div style="height:15px;"></div>
+  <div style="text-align: center; margin-left: 30px; margin-right: 30px; ">
+    <button ion-button block (click)="uploadImg()">
+      提交
+    </button>
+  </div>
+</ion-content>

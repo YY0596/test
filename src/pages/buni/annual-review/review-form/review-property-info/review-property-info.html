@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>家庭资产情况</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>资产申报日期:</ion-label>
+      <ion-datetime displayFormat="	YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="jtzcSumJson.jtzc_zcsbrq" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>现金共计(元):</ion-label>
+      <ion-input [value]="jtzcSumJson.jtzc_xjze" readonly> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>银行存款共计(元):</ion-label>
+      <ion-input [value]="jtzcSumJson.jtzc_yhckze" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>机动车数量:</ion-label>
+      <ion-input [value]="jtzcSumJson.jtzc_jdcls" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>投资类资产共计(元):</ion-label>
+      <ion-input [value]="jtzcSumJson.jtzc_tzlzcze" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>其他有价值资产共计(元):</ion-label>
+      <ion-input [value]="jtzcSumJson.jtzc_qtzcze" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button icon-left block outline (click)="addPropertyInfo()">
+      <ion-icon name="add-circle-outline" clear></ion-icon>
+      新增资产信息
+    </button>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of zgsqJson">
+      {{item.jtzc_xm_text}}
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="editPropertyInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-create-outline"></ion-icon>
+      </button>
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="delPropertyInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-close-circle-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <div class="center">
+    <button ion-button (click)="back()">上一步</button>
+    <button ion-button (click)="save()">下一步</button>
+  </div>
+</ion-content>

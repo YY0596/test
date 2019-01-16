@@ -1,0 +1,47 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>公告详情</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- <div class="contentCss"> -->
+        <!-- <form padding (ngSubmit)="toPostData()" #complaintState="ngForm"> -->
+            <!-- <ion-list mode="ios" > -->
+                <ion-item>
+                    <ion-icon class="iconfont icon-jigou mtred" item-content></ion-icon>
+                    <ion-input type="text" placeholder="申请人姓名" [(ngModel)]="model.name" name="name"  #name="ngModel"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon class="iconfont icon-dizhi mtorange" item-content></ion-icon>
+                    <ion-input type="text" placeholder="身份证号码" maxlength="18" [(ngModel)]="model.idcard" name="idcard"  #idcard="ngModel"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-icon class="iconfont icon-renyuan mtblue" item-content></ion-icon>
+                    <ion-input type="text" placeholder="申请编号" [(ngModel)]="model.applyno" name="applyno"  #applyno="ngModel"></ion-input>
+                </ion-item>
+            <!-- </ion-list> -->
+            <button ion-button color="green" block id="goCommit" type="submit" (click)="toPostData()">查询</button>
+        <!-- </form> -->
+    <!-- </div> -->
+    <ion-list>
+        <ion-item *ngFor="let item of listApplyResult" (click)="openModal(item)">
+            <!-- <ion-icon class="iconfont icon-jigou mtblue" item-left></ion-icon> -->
+            <ion-row>
+                <ion-col width-8>
+                    <span style="white-space: pre-wrap;">{{item?.SQBBH}}</span>
+                    <p>{{item?.SQRXM}}</p>
+                </ion-col>
+                <ion-col width-4>
+                    <p class="timePos">{{item?.SQSJ}}</p>
+                    <p class="timePos">{{item?.PZSJ}}</p>
+                    <p>{{item?.PZFS}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-icon class="iconfont icon icon-ios icon-chakanxiangqing mtblue" item-right></ion-icon>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll *ngIf="canLoadMore" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

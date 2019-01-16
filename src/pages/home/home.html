@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar mode="ios" style="text-align: center;">
+        <ion-buttons start>
+            <button ion-button (click)="choiceCity()" id="city"><ion-icon  class="iconfont icon icon-ios icon-dingwei3 mtblue" style="font-size:1.2em"></ion-icon>{{city}}</button>
+        </ion-buttons>
+        <ion-title>CCB建融家园公租房</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="openMenu()">
+                <ion-icon class="iconfont icon icon-ios icon-caidan mtblue" item-right ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="app-banner">
+        <img src="assets/banner/banner.png" />
+        <div class="banner-title">
+            <img src="assets/firstpage/banner-icon.png" />
+            <h2>{{ positionCity}}</h2>
+        </div>
+    </div>
+    <div class="app-modules">
+        <div *ngFor="let mod of modules" (tap)="openModule(mod)">
+            <div class='module-inner'>
+                <img [src]="mod.image" />
+                <p>{{mod.name}}</p>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <p>{{footeContent1}}</p>
+    <p>{{footeContent2}}</p>
+    <p>{{footeContent3}}</p>
+</ion-footer>
+<ion-menu type="overlay" [content]="content" side="right" (ionOpen)="menuOpened()" (ionClose)="menuClosed()">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>用户管理</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+            <ion-item style="height:51.8px;">
+                <ion-icon item-left style="font-size:1.7rem;color:#000;margin-top:20px;">
+                    版本信息
+                </ion-icon>
+                <ion-icon item-right style="font-size:1.7rem;color:#000;margin-top:20px;">
+                    {{versionName}}</ion-icon>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

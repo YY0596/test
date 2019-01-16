@@ -1,0 +1,46 @@
+<!--
+  Generated template for the PlacementFormPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>配售申请</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <span>申请人姓名:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{name}}</span>
+    </ion-item>
+    <ion-item>
+      <span>证件类別:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{identificationCategory}}</span>
+    </ion-item>
+    <ion-item>
+      <span>证件号码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{identificationNo}}</span>
+    </ion-item>
+    <ion-item>
+      <span>资格证号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{zgzh}}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>意向小区</ion-label>
+      <ion-select [(ngModel)]="selectedItem" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of intentionItem" [value]="item">{{item.xqmc}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>申请认购意向:</ion-label>
+      <ion-input type="text" placeholder="输入具体房号:6栋5楼205号" [(ngModel)]="intention"></ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer padding>
+  <div class="center">
+    <button ion-button block (click)="submit()" >提交</button>
+  </div>
+</ion-footer>

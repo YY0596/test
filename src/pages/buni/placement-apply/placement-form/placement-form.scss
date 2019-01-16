@@ -1,0 +1,10 @@
+page-placement-form {
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color:#000000
+        }
+        .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+            border-bottom-color: rgb(218, 214, 214);
+            -webkit-box-shadow: inset 0 -1px 0 0 rgb(218, 214, 214);
+            box-shadow: inset 0 -1px 0 0 rgb(218, 214, 214)
+        }
+}

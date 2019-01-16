@@ -1,0 +1,15 @@
+<ion-header mode="ios">
+    <ion-navbar>
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons end >
+            <button ion-button icon-only id="center" (click)="goCenter()">
+                <ion-icon class="iconfont icon icon-ios icon-caidan mtblue" item-right ></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="content">
+    <iframe id="iframe" class="iframe" sandbox="allow-scripts allow-top-navigation allow-pointer-lock allow-same-origin allow-popups allow-forms"
+        [src]="browser.secUrl">
+    </iframe>
+</ion-content>

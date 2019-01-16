@@ -1,0 +1,112 @@
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>申请信息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="center">
+    <button ion-button outline small class="center" color="danger" (click)="hiddenInfo=!hiddenInfo"> 点击查看登记说明</button>
+    <pre [hidden]="hiddenInfo" [innerHtml]="promptInfo" style="white-space: pre-wrap;
+    word-wrap: break-word;" class="note-info"></pre>
+  </div>
+  <div>
+    <ion-item class="subTitle">申请信息</ion-item>
+    <ion-item>
+      <span>申请人:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.jtcyxm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>证件号码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.jtcyzjhm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>资格证号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.zgzh}}</span>
+    </ion-item>
+    <ion-item>
+      <span>家庭类型:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.bzdxlx}}</span>
+    </ion-item>
+    <ion-item>
+      <span>家庭人口:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.jtrk}}</span>
+    </ion-item>
+    <ion-item>
+      <span>联系电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.lxdh}}</span>
+    </ion-item>
+    <ion-item>
+      <span>申请时间:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.sqsj}}</span>
+    </ion-item>
+    <ion-item>
+      <span>发证时间:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.fzsj}}</span>
+    </ion-item>
+    <ion-item>
+      <span>户籍所在地:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.hjdz}}</span>
+    </ion-item>
+    <ion-item>
+      <span>现居地址:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.xjzd}}</span>
+    </ion-item>
+    <ion-item>
+      <span>配偶姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.poxm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>配偶身份证号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{rentProposerInfo.posfzh}}</span>
+    </ion-item>
+
+    <div *ngIf="childrenList">
+      <div *ngFor="let item of childrenList">
+        <ion-item>
+          <span>子女姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span>{{item.value}}</span>
+        </ion-item>
+        <ion-item>
+          <span>身份证号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span>{{item.key}}</span>
+        </ion-item>
+      </div>
+    </div>
+
+    <ion-item class="subTitle">意向选择</ion-item>
+    <ion-item>
+      <ion-label>意向项目</ion-label>
+      <ion-select [(ngModel)]="selectedItem" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of intentionItem" [value]="item.value">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>备注:</ion-label>
+      <ion-input type="text" [(ngModel)]="remark"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="subTitle">选择批次</ion-item>
+    <ion-item>
+      <ion-label>选择批次</ion-label>
+      <ion-select [(ngModel)]="selectedBatch" (ionChange)="changeBatch()" cancelText="取消" okText="确定">
+        <ion-option value="1">优先批次</ion-option>
+        <ion-option value="2">无障碍批次</ion-option>
+        <ion-option value="3">第三批次</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let item of showBatch">
+        <ion-label>{{item.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="item.value"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="center" padding>
+    <button ion-button block (click)="save()">下一步</button>
+  </div>
+</ion-footer>

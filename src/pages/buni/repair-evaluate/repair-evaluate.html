@@ -1,0 +1,65 @@
+<!--
+  Generated template for the RepairEvaluatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>维修满意度调查</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>维修编号：</ion-label>
+      <ion-select [(ngModel)]="no" cancelText="取消" okText="确定" (ionChange)="changeItemNo(no)">
+        <ion-option *ngFor="let item of noList" [value]="item">{{item}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>房屋地址：</ion-label>
+      <ion-textarea rows=3 readonly=true [(ngModel)]="repairInfo.fwzl"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <span>承租人姓名：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{repairInfo.xm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>身份证号码：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{repairInfo.zjhm}}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系电话：</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <span>入住日期：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{repairInfo.rzrq}}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>满意度：</ion-label>
+      <ion-select [(ngModel)]="evaluate" cancelText="取消" okText="确定" (ionChange)="change(evaluate)">
+        <ion-option *ngFor="let item of evaluateList" [value]="item.key">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item [hidden]="hiddenReason">
+      <ion-label>不满意原因：</ion-label>
+      <ion-textarea rows=3 [(ngModel)]="reason"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>备用维修电话：</ion-label>
+      <ion-input type="text" [(ngModel)]="standbyPhone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>维修项目：</ion-label>
+      <ion-textarea rows=4 readonly=true [(ngModel)]="repairItem"></ion-textarea>
+    </ion-item>
+    <div class="center" padding>
+      <button ion-button (click)="save()" block>保存</button>
+    </div>
+  </ion-list>
+</ion-content>

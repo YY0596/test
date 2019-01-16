@@ -1,0 +1,100 @@
+page-select-picture {
+  .add {
+    font-size: 40px;
+    color: #5c5c5c;
+    text-align: center;
+    border: solid 1px #e0dfe4;
+    line-height: 80px;
+    vertical-align: middle;
+    border-radius: 6px;
+  }
+  .remove {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    display: block;
+    width: 19px;
+    height: 19px;
+    border-radius: 18px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    background-color: red;
+  }
+
+  //表示一行可以显示3张图片的css
+  .images-modules-3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+
+  }
+  .images-modules-3>div {
+    background-color: #f1f1f1;
+    position: relative;
+    width: calc(100% / 3.5);
+    height: 80px;
+    border: 0px solid #eeeeee;
+    border-top: 0;
+    border-left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: (100% / 42);
+    text-align: center
+  }
+  .images-modules-3>div>img {
+    width: calc(100%);
+    height: 80px;
+    border: 1px solid #eeeeee;
+    border-top: 0;
+    border-left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  //表示一行只能显示2张图片的css
+  .images-modules-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+
+  }
+  .images-modules-2>div {
+    background-color: #f1f1f1;
+    position: relative;
+    width: calc(100% / 2.15);
+    height: 100px;
+    border: 0px solid #eeeeee;
+    border-top: 0;
+    border-left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: (100% / 60);
+    text-align: center
+  }
+  .images-modules-2>div>img {
+    width: calc(100%);
+    height: 100px;
+    border: 1px solid #eeeeee;
+    border-top: 0;
+    border-left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

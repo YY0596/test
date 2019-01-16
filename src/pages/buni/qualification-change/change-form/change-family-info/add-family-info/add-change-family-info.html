@@ -1,0 +1,97 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>新增家庭成员信息</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>与申请人关系:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_gx" cancelText="取消" okText="确定" (ionChange)="changeRygx($event)">
+                <ion-option *ngFor="let item of rygxList" [value]="item.key" >{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+            <ion-input type="text" placeholder="请输入姓名" [(ngModel)]="familyInfo.jtry_xm"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>证件号码:</ion-label>
+            <ion-input type="text" placeholder="请输入证件号码" [(ngModel)]="familyInfo.jtry_zjhm"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>性别:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_xb" cancelText="取消" okText="确定" (ionChange)="changeXB($event)">
+                <ion-option *ngFor="let item of xbList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>前12个月总收入（元）:</ion-label>
+            <ion-input type="text" placeholder="请输入总收入" [(ngModel)]="familyInfo.jtry_sndkzpsr_text" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>婚姻状况:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_hyzk" cancelText="取消" okText="确定" (ionChange)="changeHYZK($event)">
+                <ion-option *ngFor="let item of hyzkList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>是否属本市城镇户籍:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_sfczhj" cancelText="取消" okText="确定" (ionChange)="changeBSHJ($event)">
+                <ion-option *ngFor="let item of czhjList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>是否在本市工作或居住:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_sfbsgzhjz" cancelText="取消" okText="确定" (ionChange)="changeBSGZ($event)">
+                <ion-option *ngFor="let item of bsgzList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>工作单位:</ion-label>
+            <ion-input type="text" placeholder="请输入工作单位" [(ngModel)]="familyInfo.jtry_gzdw"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>联系电话:</ion-label>
+            <ion-input type="text" placeholder="请输入联系电话" [(ngModel)]="familyInfo.jtry_gddh"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>是否五年内本市转移房产:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_sfzyfc" cancelText="取消" okText="确定" (ionChange)="changeZYFC($event)">
+                <ion-option *ngFor="let item of bsfcList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>是否享受过购房优惠:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_sfxsgyhzc" cancelText="取消" okText="确定" (ionChange)="changeGFYH($event)">
+                <ion-option *ngFor="let item of gfyhList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- <ion-item>
+            <ion-label>是否属于超生且未缴纳</ion-label>
+            <ion-select [(ngModel)]="cs" cancelText="取消" okText="确定">
+                <ion-option *ngFor="let item of csList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item> -->
+        <ion-item>
+            <ion-label>是否服过兵役:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_isfgby" cancelText="取消" okText="确定" (ionChange)="changeFBY($event)">
+                <ion-option *ngFor="let item of fbyList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item id="fbykssj" >
+            <ion-label >服兵役开始时间:</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="familyInfo.jtry_fbykssj" doneText="确定" cancelText="取消"></ion-datetime>
+        </ion-item>
+        <ion-item id="fbyjssj">
+            <ion-label >服兵役结束时间:</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="familyInfo.jtry_fbyjssj" doneText="确定" cancelText="取消"></ion-datetime>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <div class="center">
+        <button ion-button (click)="cancel()" outline style="width: 100px;">取消</button>
+        <button ion-button (click)="save()" style="width: 100px;">保存</button>
+    </div>
+</ion-footer>

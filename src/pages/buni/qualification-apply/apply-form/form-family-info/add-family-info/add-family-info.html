@@ -1,0 +1,80 @@
+<!--
+  Generated template for the AddFamilyInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>新增家庭成员信息</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>与申请人关系:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_gx" cancelText="取消" okText="确定" (ionChange)="changeRYGX($event)">
+                <ion-option *ngFor="let item of rygxList" [value]="item.key" [disabled]="jtry_gxReadOnly">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+            <ion-input type="text" placeholder="请输入姓名" [(ngModel)]="familyInfo.jtry_xm" [readonly]="jtry_xmReadOnly"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>证件号码:</ion-label>
+            <ion-input type="text" placeholder="请输入证件号码" [(ngModel)]="familyInfo.jtry_zjhm" [readonly]="jtry_zjhmReadOnly"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>性别:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_xb" cancelText="取消" okText="确定" (ionChange)="changeXB($event)">
+                <ion-option *ngFor="let item of xbList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>工作单位:</ion-label>
+            <ion-input type="text" placeholder="请输入工作单位" [(ngModel)]="familyInfo.jtry_gzdw"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>婚姻状况:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_hyzk" cancelText="取消" okText="确定" (ionChange)="changeHYZK($event)">
+                <ion-option *ngFor="let item of hyzkList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>户籍情况:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_hj" cancelText="取消" okText="确定" (ionChange)="changeHJQK($event)">
+                <ion-option *ngFor="let item of hjqkList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- <ion-item>
+            <ion-label>是否在本市工作或居住:</ion-label>
+            <ion-select [(ngModel)]="familyInfo.jtry_sfbsgzhjz" cancelText="取消" okText="确定" (ionChange)="changeBSGZ($event)">
+                <ion-option *ngFor="let item of bsgzList" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item> -->
+        <ion-item>
+            <ion-label>户籍所在地详细地址:</ion-label>
+            <ion-input type="text" placeholder="请输入户籍地" [(ngModel)]="familyInfo.jtry_hjdz"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>现居住地详细地址:</ion-label>
+            <ion-input type="text" placeholder="请输入现居住地" [(ngModel)]="familyInfo.jtry_jzdz"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>联系电话(固话):</ion-label>
+            <ion-input type="text" placeholder="请输入固定电话" [(ngModel)]="familyInfo.jtry_gddh"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>联系电话(手机):</ion-label>
+            <ion-input type="text" placeholder="请输入手机号码" [(ngModel)]="familyInfo.jtry_yddh"></ion-input>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <div class="center">
+        <button ion-button (click)="cancel()" outline style="width: 100px;">取消</button>
+        <button ion-button (click)="save()" style="width: 100px;">保存</button>
+    </div>
+</ion-footer>

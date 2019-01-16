@@ -1,0 +1,23 @@
+page-question-detail {
+    .ion-buttons{
+        margin: 0 0;
+    }
+    .titleCss{
+        text-align:left;
+        color:#007aff;
+        font-size:16px;
+        margin-left: 4px;
+        margin-top: 2px;
+    }
+    .detailTitle{
+        text-align: center;
+        font-size: 22px;
+        color: #202020;
+        white-space: pre-wrap;
+    }
+    .questionDetail{
+        font-size: 18px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}

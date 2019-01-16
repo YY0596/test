@@ -1,0 +1,73 @@
+page-choice-province {
+    .positionCss{
+        background-color: #ffffff;
+        height: 96px;    
+   }
+   .positionCss .positionTitle{
+       height: 48px;
+       font-size: 1.7rem;
+       color: #8a8585;
+       background-color: #ffffff
+   }
+   .positionCss .positionTitle span{
+       margin-left: 16px;
+       line-height: 48px;
+   }
+   .positionCss .positonCity{
+       height: 48px;
+       background-color: #ffffff
+   }
+   .positionCss .positonCity button{
+       width: auto;
+       height: 26px;
+       font-size: 1.8rem;
+       text-align: center;
+       margin-left: 16px;
+   }
+   .mtred {
+    color: rgb(255, 84, 81);
+}
+.mtblue {
+    color: #387ef5;
+}
+.mtgreen {
+    color: green;
+}
+.mtwhite {
+    color: white;
+}
+.mtorange {
+    color: rgb(255, 161, 31);
+}
+   .choiceTitle{
+    height: 48px;
+    line-height: 48px;
+   }
+   .choiceTitle span{
+       line-height: 32px;
+       margin-left: 16px;
+       font-size: 1.5rem;
+   }
+   .toolbar .searchbar-ios .searchbar-input {
+       background: rgba(255,255, 255,1);
+   }
+   #indexs-bar {
+       width: 20px;
+       text-align: center;
+       float: right;
+       position: fixed;
+       right: 0;
+       z-index: 101;
+       background-color: #eee;
+       height: 100%;
+       .index-bar {
+         margin: 1px 0;
+         line-height: 20px;
+        }
+    }
+     .item-divider-md,
+     .item-divider-ios,
+     .item-divider-wp {
+       background-color: #eee;
+    }
+}

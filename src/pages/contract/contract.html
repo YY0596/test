@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>电子合同</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <dhc-wizard [autoHeight]="false" [bgColor]="'#ffffff'">
+    <dhc-wizard-step *ngFor="let step of wizardSteps" [title]="step.title" [content]="step.content">
+    </dhc-wizard-step>
+  </dhc-wizard>
+</ion-content>

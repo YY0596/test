@@ -1,0 +1,49 @@
+page-buni {
+    .app-modules {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-around;
+    }
+    .app-modules>div {
+        width: calc(100% / 3);
+        height: 130px;
+        border: 1px solid #eeeeee;
+        border-top: 0;
+        border-left: 0;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .module-inner {
+        width: calc(100%);
+        height: 130px;
+    }
+    .module-inner>img {
+        width: calc(100%);
+        height: 130px;
+    }
+    .module-inner>p {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -40px;
+        color: #fff;
+    }
+}
+
+.center {
+    text-align: center
+}
+
+.subject {
+    font-size: 20px
+}
+
+.note-info {
+    font-size: 16px;
+    font-family: '微软雅黑', '华文中宋', 'serif', 'monospace'; // font-family: Times, TimesNR, 'New Century Schoolbook', Georgia, 'New York', serif;
+}

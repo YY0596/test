@@ -1,0 +1,36 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>新增住房信息</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label> 家庭住房情况:</ion-label>
+            <ion-select [(ngModel)]="houseInfo.jtzf_jtzflx" (ionChange)="changeHouseType($event)" cancelText="取消" okText="确定">
+                <ion-option *ngFor="let item of houseTypes" [value]="item.key">{{item.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>房屋产权人:</ion-label>
+            <ion-input [(ngModel)]="houseInfo.jtzf_cqr" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>房屋坐落:</ion-label>
+            <ion-input [(ngModel)]="houseInfo.jtzf_fwzl" type="text"> </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>建筑面积(m2):</ion-label>
+            <ion-input [(ngModel)]="houseInfo.jtzf_jzmj" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>出售转让时间:</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="houseInfo.jtzf_zysj" doneText="确定" cancelText="取消"></ion-datetime>
+        </ion-item>
+    </ion-list>
+    <div class="center">
+        <button ion-button (click)="cancel()" outline style="width: 100px;">取消</button>
+        <button ion-button (click)="save()" style="width: 100px;">保存</button>
+    </div>
+</ion-content>

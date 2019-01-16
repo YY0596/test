@@ -1,0 +1,34 @@
+<!--
+  Generated template for the FormFamilyInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>家庭成员信息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button icon-left block outline (click)="addFamilyInfo()" style="margin-top:8px;">
+    <ion-icon name="add-circle-outline"></ion-icon>
+    新增家庭成员信息</button>
+  <ion-list moe="ios">
+    <ion-item *ngFor="let item of jtryJson">
+      <p>姓名:{{item.jtry_xm}}</p>
+      <p>证件号码:{{item.jtry_zjhm}}</p>
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="editFamilyInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-create-outline"></ion-icon>
+      </button>
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="delFamilyInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-close-circle-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="center">
+    <button ion-button (click)="back()">上一步</button>
+    <button ion-button (click)="save()">下一步</button>
+  </div>
+</ion-footer>

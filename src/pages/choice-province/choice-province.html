@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar mode="ios">
+        <ion-buttons start>
+            <button ion-button icon-only (click)="closeModal()">
+                <!-- <ion-icon class="iconfont icon icon-ios icon-guanbi " item-right style="font-size:3em"></ion-icon>-->
+                <ion-icon class="iconfont icon icon-xiangzuo" mode='android' style="font-size:1.5em"></ion-icon>
+            </button>
+        </ion-buttons>
+        <!-- <ion-searchbar (keyup)="getItems($event)" placeholder="请输入城市名称" autocomplete="off" mode='ios' showCancelButton='false'> -->
+        <ion-searchbar (input)="getItems($event)" placeholder="请输入城市名称" autocomplete="off" mode='ios' showCancelButton='false'>
+        </ion-searchbar>
+    </ion-navbar>
+</ion-header>
+<ion-content style="background-color:#eeeeee">
+    <div class="positionCss">
+        <div class="positionTitle">
+            <span style="line-height:48px;">定位城市</span>
+        </div>
+        <div class="positonCity">
+            <button ion-button color="light" (click)="getPositionCityForAddress()">{{positionCity}}</button>
+        </div>
+    </div>
+    <div class="choiceTitle">
+        <span id="choiceTitle">选择省份</span>
+    </div>
+    <ion-list>
+        <!-- <ion-item *ngFor="let item of province" (click)="choiceProvince(item)">
+        <ion-label>
+            <p>{{item.provinceName}}</p>
+        </ion-label>
+        <ion-icon class="iconfont icon icon-ios icon-xuanze mtblue" item-right></ion-icon>
+    </ion-item>
+    <button ion-item *ngFor="let item of citys" (click)="choicecity(item)">
+        {{ item.cityName }}
+    </button> -->
+        <button ion-item *ngFor="let item of province" (click)="choiceProvince(item)">
+            {{ item.provinceName }}
+        </button>
+        <ion-item *ngFor="let item of citys" (click)="choicecity(item)">
+            <ion-label>
+                {{item.cityName}}
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

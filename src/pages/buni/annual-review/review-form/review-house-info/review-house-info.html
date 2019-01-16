@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>家庭住房情况</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding>
+    <button ion-button icon-left block outline (click)="addHouseInfo()">
+      <ion-icon name="add-circle-outline" clear></ion-icon>
+      新增住房信息
+    </button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let item of zfqkJson">
+      {{item.jtzf_jtzflx_text}}
+      <p>{{item.jtzf_cqr}}</p>
+      <p item-end>{{item.jtzf_zysj}}</p>
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="editHouseInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-create-outline"></ion-icon>
+      </button>
+      <button ion-button icon-only outline item-end style="height: 30px;" (click)="delHouseInfo(item)">
+        <ion-icon style="font-size: 30px;" name="ios-close-circle-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <div class="center">
+    <button ion-button (click)="back()">上一步</button>
+    <button ion-button (click)="save()">下一步</button>
+  </div>
+</ion-content>

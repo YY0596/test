@@ -1,0 +1,28 @@
+.page-info{
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+}
+.info-template{
+    padding-top: 14rem;
+    text-align: center;
+}
+.info-template .template-icon{
+    width: 160px;
+    height: 160px;
+}
+
+.info-template .template-title{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.info-template .template-sub-title{
+    font-weight: normal;
+    font-size: 1.4rem;
+    color:#666666;
+}

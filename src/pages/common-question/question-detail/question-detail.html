@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>问题详情</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="contentCss">
+    <ion-list>
+        <div style="text-align:center">
+            <h3 class="detailTitle">{{questionDetail.title}}</h3>
+        </div>
+        <ion-row>
+            <ion-col>
+                <p>{{"来源："+questionDetail.personName}}</p>
+            </ion-col>
+            <ion-col>
+                <p style="text-align: right"> {{"时间："+questionDetail.time}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <div class="questionDetail" id="detailContent" [innerHtml]="questionDetail.content"></div>
+        </ion-row>
+    </ion-list>
+    <div *ngIf="fileExist">
+        <ion-list no-lines>
+            <ion-list-header style="font-size:16px;">
+                附件下载：
+            </ion-list-header>
+            <ion-item *ngFor="let item of questionDetail.attachments" (click)="download(item)">
+                <a>{{item.fileName}}</a>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

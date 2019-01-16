@@ -1,0 +1,53 @@
+
+page-progress-query{
+    $toolbar-md-background:#0168B7;
+$toolbar-ios-background:#0168B7;
+.ion-buttons {
+    margin: 0 0;
+}
+.head{
+    background-color: #0066b3;
+}
+
+.titleCss {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+#progressBar {
+    width: 96%;
+    height: 30px;
+    position: relative;
+    margin: 30px 0 0 0;
+}
+.line {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top:50%;
+    left: 0;
+    margin-top:-14px;
+    border:1px solid #ddd;
+    background: #ccc;
+}
+.progress-line {
+    position: absolute;
+    display: inline-block;
+    background: green;
+    height: 10px;
+    /*margin-left:-50%;*/
+}
+.nodeCircle {
+    position: absolute;
+    top: 0;
+    margin-top: -5px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    background: green;
+    margin-left: -18px;
+    color: #fff;
+ }
+}

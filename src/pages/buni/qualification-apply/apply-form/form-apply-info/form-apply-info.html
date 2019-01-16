@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>申请信息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <span>申请人姓名:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{sqrxm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>证件类型:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>身份证</span>
+    </ion-item>
+    <ion-item>
+      <span>证件号码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{sqrzjhm}}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>户籍所在区:</ion-label>
+      <!-- (ionChange)="changehjArea()" -->
+      <ion-select [(ngModel)]="selectedhjdcq" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of hjcqList" [value]="item.key">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>户籍所在街道:</ion-label>
+      <ion-select [(ngModel)]="selectedhjdjd" (ionChange)="changehjjd()" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of hjjdList" [value]="item.jdid">{{item.jdmc}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>户籍所在居委:</ion-label>
+      <ion-select [(ngModel)]="selectedhjdjw" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of hjjwhList" [value]="item.cqid">{{item.cqmc}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-item>
+      <ion-label>户籍地址:</ion-label>
+      <ion-input type="text" placeholder="请输入户籍地址" [(ngModel)]="sqrhjddz"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>申请城区:</ion-label>
+      <!-- (ionChange)="changejzArea()" -->
+      <ion-select [(ngModel)]="selectedSqcq" cancelText="取消" okText="确定"> 
+        <ion-option *ngFor="let item of jzcqList" [value]="item.key">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>申请街道:</ion-label>
+      <ion-select [(ngModel)]="selectedSqjd" (ionChange)="changejzjd()" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of jzjdList" [value]="item.jdid">{{item.jdmc}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>申请居委:</ion-label>
+      <ion-select [(ngModel)]="selectedSqjw" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of jzjwhList" [value]="item.cqid">{{item.cqmc}}</ion-option>
+      </ion-select>
+    </ion-item> -->
+
+
+    <ion-item>
+      <ion-label>申请保障性住房类型:</ion-label>
+      <ion-select [(ngModel)]="selectedBzzflx" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of bzzflxList" [value]="item.key">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>家庭人口:</ion-label>
+      <ion-input type="text" type="number" min="0" placeholder="请输入家庭人口" [(ngModel)]="jtrk"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>保障人口:</ion-label>
+      <ion-input type="text" type="number" min="0" placeholder="请输入保障人口" [(ngModel)]="bzrk"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>家庭收入情况:</ion-label>
+      <ion-select [(ngModel)]="selectedJtsrqk" cancelText="取消" okText="确定">
+        <ion-option *ngFor="let item of jtsrqkList" [value]="item.key">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>人均月收入:</ion-label>
+      <ion-input type="text" type="number" min="0" placeholder="请输入人均月收入" [(ngModel)]="rjysr"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>低保证号:</ion-label>
+      <ion-input type="text" placeholder="请输入低保证号" [(ngModel)]="dbzh"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label>低保证批准时间:</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="dbpzsj" doneText="确定" cancelText="取消"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>低保人数:</ion-label>
+      <ion-input type="text" type="number" min="0" placeholder="请输入低保人数" [(ngModel)]="dbbzrs"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>联系方式（固话）:</ion-label>
+      <ion-input type="text" placeholder="请输入固定电话" [(ngModel)]="sqrlxdh"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系方式（手机）:</ion-label>
+      <ion-input type="number" placeholder="请输入手机号码" [(ngModel)]="sqrsjhm"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <!-- <button ion-button block color="primary" style="margin-bottom:8px"  (click)="next()">下一步</button> -->
+  <div class="center" padding>
+    <!-- <button ion-button (click)="back()">上一步</button> -->
+    <button ion-button block (click)="save()">下一步</button>
+  </div>
+
+</ion-footer>

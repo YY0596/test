@@ -1,0 +1,16 @@
+<ion-header mode="ios">
+    <ion-navbar color="primary">
+    <ion-title>业务申请</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="app-modules">
+    <div *ngFor="let mod of bizModules" (tap)="openModule(mod)">
+      <div class='module-inner'>
+        <img [src]="mod.image" />
+        <p>{{mod.name}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

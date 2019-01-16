@@ -1,0 +1,51 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>新增资产信息</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>家庭成员姓名:</ion-label>
+            <ion-select [(ngModel)]="propertyInfo.jtzc_xm_text" cancelText="取消" okText="确定">
+                <ion-option *ngFor="let item of homeMembers" [value]="item.jtry_xm" [disabled]="isReadOnly">{{item.jtry_xm}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>现金(元):</ion-label>
+            <ion-input [(ngModel)]="propertyInfo.jtzc_scpgj_text" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>银行存款(元):</ion-label>
+            <ion-input [(ngModel)]="propertyInfo.jtzc_yhck_text" type="number" min="0"> </ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>机动车数量:</ion-label>
+            <ion-input [(ngModel)]="propertyInfo.jtzc_jdcsl_text" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>投资类资产价值(元):</ion-label>
+            <ion-input [(ngModel)]="propertyInfo.jtzc_tzzcjz_text" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>其他有价值资产估值(元):</ion-label>
+            <ion-input [(ngModel)]="propertyInfo.jtzc_qt_text" type="number" min="0"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>工商注册:</ion-label>
+            <ion-select [(ngModel)]="propertyInfo.jtzc_gszc" (ionChange)="changeRegister()" cancelText="取消" okText="确定">
+                <ion-option value='1'>有</ion-option>
+                <ion-option value='0'>无</ion-option>
+            </ion-select>
+            <!-- <ion-select [(ngModel)]="selectedArea" (ionChange)="changeArea()" cancelText="取消" okText="确定">
+                <ion-option *ngFor="let item of hjjdList" [value]="item.jdid">{{item.jdmc}}</ion-option>
+            </ion-select> -->
+        </ion-item>
+    </ion-list>
+    <div class="center">
+        <button ion-button (click)="cancel()" outline style="width: 100px;">取消</button>
+        <button ion-button (click)="save()" style="width: 100px;">保存</button>
+    </div>
+</ion-content>

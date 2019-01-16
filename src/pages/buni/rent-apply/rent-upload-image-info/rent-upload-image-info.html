@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>资料列表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="padding-top:150px;" padding>
+  <div *ngFor="let item of imageInfoList">
+    <ion-item class="center" no-lines>
+      {{item.zlmc}}
+    </ion-item>
+    <div>
+      <page-select-picture [(fileObjList)]="item.base64List" [imgModule3]='imgModule3' [max]='max'></page-select-picture>
+    </div>
+  </div>
+
+  <div style="height:15px;"></div>
+  <div class="center">
+    <button ion-button block (click)="uploadImg()" >
+      提交
+    </button>
+  </div>
+</ion-content>

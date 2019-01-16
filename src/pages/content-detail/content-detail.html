@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{navInfo.name+"文章详情"}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="contentCss">
+  <ion-list *ngIf="data">
+    <div style="text-align:center">
+      <h3 class="detailTitle">{{data.wzbt}}</h3>
+    </div>
+    <ion-row>
+      <ion-col>
+        <p>{{"来源："+data.wzly}}</p>
+      </ion-col>
+      <ion-col>
+        <p style="text-align: right"> {{"时间："+data.wzfbrq}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <div class="questionDetail" [innerHtml]="nr | html"></div>
+    </ion-row>
+  </ion-list>
+  <div *ngIf="attachments.length > 0">
+    <ion-list no-lines>
+      <ion-list-header style="font-size:16px;">
+        附件下载：
+      </ion-list-header>
+      <ion-item *ngFor="let item of attachments" (click)="download(item)">
+        <a>{{item.fileName}}</a>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

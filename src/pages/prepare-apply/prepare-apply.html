@@ -1,0 +1,70 @@
+<ion-header mode="ios">
+    <ion-navbar color="primary">
+    <ion-title>申请人详细信息</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color:lightgray">
+  <ion-list>
+    <ion-item>
+      <span>申请人姓名&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{sqrxm}}</span>
+    </ion-item>
+    <ion-item>
+      <span>证件类型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>居民身份证</span>
+    </ion-item>
+    <ion-item>
+      <span>证件号码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>{{zjhm}}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>性别</ion-label>
+      <ion-select [(ngModel)]="sex" interface="action-sheet" cancelText="取消" placeholder="请选择性别">
+        <ion-option value={{item.key}} *ngFor="let item of sexList">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>联系电话&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+      <ion-input type="text" placeholder="请输入联系电话" [(ngModel)]="lxdh"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>{{jtsrfs}}</ion-label>
+      <ion-input type="text" placeholder="请输入家庭收入资金" [(ngModel)]="jtsr"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>家庭住房情况</ion-label>
+      <ion-select [(ngModel)]="jtzfqk" interface="action-sheet" cancelText="取消" okText="确定" id="marriage" placeholder="请选择家庭住房情况">
+        <ion-option value={{item.key}} *ngFor="let item of jtzfqkList">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>房屋坐落&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+      <ion-input type="text" placeholder="请输入房屋坐落" [(ngModel)]="fwzl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>建筑面积(m³)&nbsp;&nbsp;&nbsp;</ion-label>
+      <ion-input type="text" placeholder="请输入建筑面积" [(ngModel)]="jzmj"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>婚姻状况</ion-label>
+      <ion-select [(ngModel)]="marriage" interface="action-sheet" cancelText="取消" okText="确定" id="marriage" placeholder="请选择婚姻状况" id="hyzjSelect">
+        <ion-option value={{item.key}} *ngFor="let item of marriageList">{{item.value}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>户籍情况</ion-label>
+      <ion-select [(ngModel)]="hjqk" submitText="ok" cancelText="取消" okText="确定"  placeholder="请选择户籍情况" id="hjqkSelect">
+        <ion-option value={{item.key}} *ngFor="let item of hjqkList">{{item.value}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label >户籍所在地详细地址</ion-label>
+      <ion-textarea placeholder="请输入户籍所在地详细地址" style="border: 1px #8c8c8c; padding: 5px;" 
+      minlength="10" maxlength="400" [(ngModel)]="hjszdxxdz"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button ion-button block color="primary" style="margin-top:10px;" (click)="next()">下一步</button>
+</ion-content>

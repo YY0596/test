@@ -1,0 +1,44 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>房源信息</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- <ion-item>
+        <ion-icon class="iconfont icon-jigou mtred" item-content></ion-icon>
+        <ion-input type="text" placeholder="输入房源名称" [(ngModel)]="xqmc"></ion-input>
+    </ion-item> -->
+    <ion-item>
+        <ion-icon class="iconfont icon-jigou mtred" item-content></ion-icon>
+        <ion-input type="text" placeholder="输入栋号" [(ngModel)]="dh"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-icon class="iconfont icon-jigou mtred" item-content></ion-icon>
+        <ion-input type="text" placeholder="输入房号" [(ngModel)]="fh"></ion-input>
+    </ion-item>
+    <button ion-button block color="primary" style="margin-top:20px;" (click)="selectByCondition()">查询</button>
+    <ion-list>
+        <ion-item *ngFor="let item of houseList">
+            <!-- <ion-icon class="iconfont icon-jigou mtblue" item-left></ion-icon> -->
+
+            <ion-row>
+
+                <span style="white-space: pre-wrap;">{{item.xqmc}}{{item.dh}}栋{{item.dyh}}单元{{item.fh}}房</span>
+
+            </ion-row>
+            <ion-row>
+
+                <p>房屋面积：{{item.mj}}㎡</p>
+
+                <!-- <ion-col width-4 >
+                        <p style="padding-left: 30px;">房屋朝向：{{item.fwcx}}</p>
+                    </ion-col> -->
+            </ion-row>
+
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll *ngIf="canLoadMore" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

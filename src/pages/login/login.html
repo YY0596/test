@@ -1,0 +1,28 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>登录</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div style="text-align:center;top:10px">
+        <img src="assets/icon/icon.png" style="width:64px;height:64px;">
+        <h3>CCB建融家园公租房</h3>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)"  style="margin-top:36px;">
+        <ion-item>
+            <ion-label><img src="assets/login/user.png" style="width:24px;height:24px;"></ion-label>
+            <ion-input type="username" placeholder="请输入手机号" value="" [formControl]="username" clearInput=true></ion-input>
+        </ion-item>
+        <!-- <div *ngIf="username.hasError('required') && username.touched" class="error-message" style="margin-left:18px;"><span style="color:red">请输入用户名</span></div>
+        <div *ngIf="(username.hasError('minlength')||username.hasError('maxlength')||username.hasError('pattern')) && username.touched" class="error-message" style="margin-left:18px;"><span style="color:red">请输入正确的用户名</span></div> -->
+        <ion-item>
+            <ion-label><img src="assets/login/pwd.png" style="width:24px;height:24px;"></ion-label>
+            <ion-input type="password" placeholder="请输入密码" value="" [formControl]="password" clearInput=true></ion-input>
+        </ion-item>
+        <!-- <div *ngIf="password.hasError('required') && password.touched" class="error-message" style="margin-left:18px;"><span style="color:red">请输入密码</span></div>
+        <div *ngIf="(password.hasError('minlength')) && password.touched" class="error-message" style="margin-left:18px;"><span style="color:red">密码长度最少为四位</span></div> -->
+        <button ion-button block color="primary" type="submit" style="margin-top:20px; height:32px;font-size:18px;">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+        <div class="aCss" style="margin-top:10px;"><a style="margin-right:8px;" (click)="gotoRegister()">注册</a>
+            <a (click)="gotoForgetPwd()">找回密码</a></div>
+    </form>
+</ion-content>

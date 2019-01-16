@@ -1,0 +1,71 @@
+<!--
+  Generated template for the HouseRepairPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>房屋维修</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item style="color:blue" (click)="changePage(1)" [color]="!hiddenRepairRecord?'lightBlue':'#f4f4f4'">维修记录</ion-item>
+    <ion-item style="color:blue" (click)="changePage(2)" [color]="!hiddenApplyRepair?'lightBlue':'#f4f4f4'">申请维修</ion-item>
+  </ion-list>
+  <div [hidden]='hiddenRepairRecord'>
+    <div [hidden]='!hiddenRepairInfoError'>
+      <div *ngFor="let item of idList">
+        <p [id]="item.no" style="height:10px;text-align: center;" (click)="openRepairInfo(item.no)">维修编号-{{item.no}}</p>
+        <div [id]="item.barId" style="display:none" class="progressBar">
+          <!-- id="progressBar" -->
+          <div class="line">
+            <span class="progress-line" [id]="item.lineId"></span>
+            <!-- id="progress-line" -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <p [hidden]='hiddenRepairInfoError' style="color: red;text-align: center"> 没有维修记录!</p>
+  </div>
+
+  <div [hidden]='hiddenApplyRepair'>
+    <ion-list [hidden]='!hiddenApplyError'>
+      <ion-item>
+        <ion-label>房屋地址：</ion-label>
+        <ion-textarea rows=2 readonly=true [(ngModel)]="repairInfo.fwzl"></ion-textarea>
+        <!-- <span item-end>{{repairInfo.fwzl}}</span> -->
+      </ion-item>
+      <ion-item>
+        <span>承租人姓名：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>{{repairInfo.xm}}</span>
+      </ion-item>
+      <ion-item>
+        <span>身份证号码：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>{{repairInfo.zjhm}}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label>联系电话：&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+        <ion-input type="text" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <span>入住日期：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span>{{repairInfo.rzrq}}</span>
+      </ion-item>
+      <ion-item>
+        <ion-label>维修项目：</ion-label>
+        <ion-textarea rows=4 [(ngModel)]="repairItem"></ion-textarea>
+      </ion-item>
+      <div class="center" padding>
+        <button ion-button (click)="saveApply()" block>提交申请</button>
+      </div>
+    </ion-list>
+    <p [hidden]='hiddenApplyError' style="color: red;text-align: center">您有当前正在进行的房屋维修业务，不可再次申请！</p>
+  </div>
+
+</ion-content>

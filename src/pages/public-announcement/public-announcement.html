@@ -1,0 +1,79 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>公示公告</ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="kind" mode="ios">
+            <ion-segment-button value="QualificationApplication" (ionSelect)="selectedChange(0)">
+                资格申请公示
+            </ion-segment-button>
+            <ion-segment-button value="AuditResult" (ionSelect)="selectedChange(1)">
+                审核结果公示
+            </ion-segment-button>
+            <ion-segment-button value="RentResult" (ionSelect)="selectedChange(2)">
+                配租结果公示
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding-top:150px;" padding>
+    <div [ngSwitch]="kind" class="contentCss">
+        <ion-slides #contentSlider (ionSlideDidChange)="onSlideChanged()">
+            <ion-slide>
+                <div id="Qualification" *ngSwitchCase="'QualificationApplication'">
+                    <ion-list class="article-list">
+                        <ion-item *ngFor="let item of QualificationApplications" (click)="chooseThisQADetial(item)">
+                            <div class="article-item">
+                                <p class="item-title-special">{{item.title|stringPipe}}</p>
+                                <div class="item-publish">
+                                    <span>{{item.time}}</span>
+                                </div>
+                                <!-- <div class="item-badge" [innerHtml]="item.symbol+item.priority"></div> -->
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll *ngIf="canLoadMoreQualificationApplications" (ionInfinite)="doInfiniteQualificationApplications($event)">
+                        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+                    </ion-infinite-scroll>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div id="Audit" *ngSwitchCase="'AuditResult'">
+                    <ion-list class="article-list">
+                        <ion-item *ngFor="let item of AuditResults" (click)="chooseThisARDetial(item)">
+                            <div class="article-item">
+                                <p class="item-title-special">{{item.title|stringPipe}}</p>
+                                <div class="item-publish">
+                                    <span>{{item.time}}</span>
+                                </div>
+                                <!-- <div class="item-badge" [innerHtml]="item.symbol+item.priority"></div> -->
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll *ngIf="canLoadMoreAuditResults" (ionInfinite)="doInfiniteAuditResults($event)">
+                        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+                    </ion-infinite-scroll>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div id="Rent" *ngSwitchCase="'RentResult'">
+                    <ion-list class="article-list">
+                        <ion-item *ngFor="let item of RentResults" (click)="chooseThisRRDetial(item)">
+                            <div class="article-item">
+                                <p class="item-title-special">{{item.title|stringPipe}}</p>
+                                <div class="item-publish">
+                                    <span>{{item.time}}</span>
+                                </div>
+                                <!-- <div class="item-badge" [innerHtml]="item.symbol+item.priority"></div> -->
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    <ion-infinite-scroll *ngIf="canLoadMoreRentResults" (ionInfinite)="doInfiniteRentResults($event)">
+                        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+                    </ion-infinite-scroll>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>

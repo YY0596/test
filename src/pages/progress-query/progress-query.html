@@ -1,0 +1,42 @@
+<ion-header mode="ios">
+        <ion-navbar color="primary">
+        <ion-title>进度查询</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div style="margin-bottom:20px;">
+        <span style="display:none;" id="record">我的申请记录：</span>
+    </div>
+    <ion-list style="margin-top:20px;" id="progressList" style="display:none">
+        <ion-item>
+            <!-- <ion-icon class="iconfont icon-jigou mtblue" item-left></ion-icon> -->
+            <ion-row>
+                <ion-col width-4 style="font-size:14px;text-align:left;">
+                    <a style="color:#000000" id="ywlb">{{ywlb}}</a>
+                </ion-col>
+                <ion-col width-4 style="font-size:14px;text-align:right;">
+                    <a style="display:none;" id="shenhezhuangtai"> 审核状态：
+                        <span style="color:red">{{spjd}}</span>
+                    </a>
+                </ion-col>
+            </ion-row>
+            <div style="font-size:14px;margin-top:20px;margin-left:4px;">
+                <span>{{slbh}}</span>
+            </div>
+            <div style="font-size:14px;margin-top:10px;margin-left:4px;">
+                <span>{{sqsj}}</span>
+            </div>
+            <div style="font-size:14px;margin-top:10px;margin-left:4px;">
+                <span>{{sqr}}</span>
+            </div>
+        </ion-item>
+    </ion-list>
+    <div style="font-size:14px;margin-top:10px;margin-left:4px;">
+        <span id="showProcess" style="display:none"></span>
+    </div>
+    <div id="progressBar" style="display:none">
+        <div class="line">
+            <span class="progress-line" id="progress-line"></span>
+        </div>
+    </div>
+</ion-content>

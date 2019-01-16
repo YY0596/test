@@ -1,0 +1,21 @@
+contract-photo {
+    .card-desc {
+        padding: 10px 20px;
+        // margin: 20px 0 0 -90px;
+        border: 1px solid #eeeeee;
+        border-left-width: 3px;
+        border-left-color: #cccccc;
+        border-radius: 3px;
+    }
+    .card-desc h4 {
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: #337ad5;
+    }
+    .card-desc p {
+        font-size: 14px;
+        color: #333333;
+        height: 24px;
+        line-height: 24px;
+    }
+}

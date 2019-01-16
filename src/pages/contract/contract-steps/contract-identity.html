@@ -1,0 +1,21 @@
+<div>
+    <div class="wizard-step-info">
+        <img src="assets/contract/use-identity.png" />
+        <div class="step-prompt">
+            <h2>确认身份信息</h2>
+            <h5>您的身份信息如下，请确认：</h5>
+        </div>
+    </div>
+    <div class="section-line"></div>
+    <ion-list inset>
+        <ion-item class="">
+            <ion-label>用户名：</ion-label>
+            <ion-input type="text" [(ngModel)]="userName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>身份证号：</ion-label>
+            <ion-input type="text" [(ngModel)]="userId"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div class="section-line"></div>
+</div>

@@ -1,0 +1,24 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>审核结果公示</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content style="padding-top:150px;" padding>
+    <div id="Audit">
+        <ion-list class="article-list">
+            <ion-item *ngFor="let item of AuditResults" (click)="chooseThisARDetial(item)">
+                <div class="article-item">
+                    <p class="item-title-special">{{item.title|stringPipe}}</p>
+                    <div class="item-publish">
+                        <span>{{item.time}}</span>
+                    </div>
+                    <!-- <div class="item-badge" [innerHtml]="item.symbol+item.priority"></div> -->
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll *ngIf="canLoadMoreAuditResults" (ionInfinite)="doInfiniteAuditResults($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>

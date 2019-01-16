@@ -1,0 +1,9 @@
+<div [ngClass]="imgModule3?'images-modules-3':'images-modules-2'" *ngIf="fileObjList">
+  <div *ngFor="let fileObj of fileObjList, let i = index" class="pictures">
+    <span *ngIf="allowDelete" class="remove" tappable (click)="deletePicture(i)">×</span>
+    <img src="{{fileObj.base64}}" tappable (click)="viewerPicture(i)">
+  </div>
+  <div *ngIf="fileObjList.length<max&&allowAdd" tappable (click)="addPicture()" class="pictures add">
+    <ion-icon name="camera"></ion-icon>
+  </div>
+</div>

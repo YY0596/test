@@ -1,0 +1,25 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>政策详情</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <div style="text-align:center">
+            <h3 class="detailTitle">{{informationDetail.title}}</h3>
+        </div>
+        <ion-row>
+            <ion-col>
+                <p>{{"来源："+informationDetail.personName}}</p>
+            </ion-col>
+            <ion-col>
+                <p style="text-align: right"> {{informationDetail.time}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <div class="informationDetail" id="detailContent" [innerHtml]="informationDetail.content"></div>
+        </ion-row>
+    </ion-list>
+</ion-content>

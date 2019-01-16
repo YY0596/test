@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="primary">
+    <ion-title>住房保障资格变更</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+  <div class="center subject">选择申请类型</div>
+  <ion-list no-lines>
+  <ion-item>
+    <ion-label>住房保障申请地区城区/县</ion-label>
+    <ion-select [(ngModel)]="selectedArea" (ionChange)="changeArea()" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let item of areaList" [value]="item.cqid">{{item.cqmc}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>住房保障申请街道/乡镇</ion-label>
+    <ion-select [(ngModel)]="selectedTown" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let item of townList" [value]="item.jdid">{{item.jdmc}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <pre [innerHtml]="areaNotes" style="white-space: pre-wrap;
+  word-wrap: break-word;" class="note-info" padding></pre>
+
+  <ion-item>
+    <ion-label>保障家庭类型</ion-label>
+    <ion-select [(ngModel)]="selectedHomeStyle" cancelText="取消" okText="确定">
+      <ion-option *ngFor="let item of homeStyleList" [value]="item.key">{{item.value}}</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+  <pre [innerHtml]="homeStyleNotice" style="white-space: pre-wrap;
+  word-wrap: break-word;" class="note-info" padding></pre>
+  <div class="center" padding> 
+    <button ion-button block (click)="nextPage()">下一步</button>
+  </div>
+</ion-content>

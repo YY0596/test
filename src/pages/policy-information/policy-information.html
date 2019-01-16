@@ -1,0 +1,23 @@
+<ion-header>
+        <ion-navbar color="primary">
+        <ion-title>政策信息</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="article-list">
+        <ion-item *ngFor="let item of information" (click)="chooseThisDetial(item)">
+            <div class="article-item">
+                <p class="item-title">{{item.title|stringPipe}}</p>
+                <div class="item-publish">
+                    <span>{{item.personName}}</span>
+                    <span>{{item.time}}</span>
+                </div>
+                <div class="item-badge" [innerHtml]="item.symbol+item.priority"></div>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll *ngIf="canLoadMore" (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

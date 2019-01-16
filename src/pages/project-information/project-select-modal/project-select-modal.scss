@@ -1,0 +1,58 @@
+page-project-select-modal {
+    #category {
+        background-image: none;
+        background-color: #fff;
+    }
+    #category .has-header {
+        top: 0;
+    }
+    #category div,
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    img,
+    a {
+        font-family: '΢���ź�';
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        list-style: none;
+        color: #666;
+        font-weight: 300;
+    }
+    #category a,
+    span {
+        display: block;
+        text-decoration: none;
+    }
+    #category body {
+        overflow: hidden;
+    }
+
+    .iconfont {
+        font-size: 2rem;
+        color: #0168B7;
+        // margin-right: 1.5rem;
+    }
+    .mtred {
+        color: rgb(255, 84, 81);
+    }
+    .mtblue {
+        color: #387ef5;
+    }
+    .mtgreen {
+        color: green;
+    }
+    .mtorange {
+        color: rgb(255, 161, 31);
+    }
+    .titleCss{
+        color: #FFFFFF;
+        font-size: 16px;
+        margin-left: 4px;
+        margin-top: 2px;
+    }
+}
